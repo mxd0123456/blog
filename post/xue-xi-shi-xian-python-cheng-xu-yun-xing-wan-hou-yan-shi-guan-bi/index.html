@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>[学习]实现Python程序运行完后延时关闭 | mxd&#39;s blog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://mxd0123456.github.io/blog/favicon.ico?v=1658116178940">
+<link rel="stylesheet" href="https://mxd0123456.github.io/blog/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="实现Python程序运行完后延时关闭
+
+这是一篇帮助初学者的教程
+假如说我这个程序是计算xxx的，但计算完毕得到结果就自动关闭了，让人看的时间都没有
+这时我们需要一个参数
+调用时间模块里的sleep函数
+sleep，顾名思义，睡觉、延时
+#..." />
+    <meta name="keywords" content="csdn,code,python,windows,linux" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://mxd0123456.github.io/blog">
+        <img src="https://mxd0123456.github.io/blog/images/avatar.png?v=1658116178940" class="site-logo">
+        <h1 class="site-title">mxd&#39;s blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/blog" class="site-nav">
+            Blog首页
+          </a>
+        
+      
+        
+          <a href="/blog/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/blog/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+        
+          <a href="https://mxd0123456.github.io/" class="site-nav">
+            MXD首页
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/mxd0123456/" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://blog.csdn.net/m0_52563006?type=blog" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="blank"><span style="color:#00FF00">本博客采用 CC BY-NC-SA 4.0 进行许可</span></a>
+
+Copyright 2022 &copy 
+<a href="https://mxd0123456.github.io" target="_blank">
+<span style="color:#00FF00">mxd</span></a>
+评论功能来自<a href="https://github.com/gitalk/gitalk"><span style="color:#00FFFF">Gitalk</span></a>
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+ | <a class="rss" href="https://mxd0123456.github.io/blog/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">[学习]实现Python程序运行完后延时关闭</h2>
+            <div class="post-date">Monday, July 11th 2022, 10:59:27 AM</div>
+            
+            <div class="post-content" v-pre>
+              <p>实现Python程序运行完后延时关闭</p>
+<!-- more -->
+<p>这是一篇帮助初学者的教程</p>
+<p>假如说我这个程序是计算xxx的，但计算完毕得到结果就自动关闭了，让人看的时间都没有</p>
+<p>这时我们需要一个参数</p>
+<p>调用时间模块里的sleep函数</p>
+<p>sleep，顾名思义，睡觉、延时</p>
+<p>#单位为秒，可以设置为0.4，那就是400毫秒<br>
+time.sleep(2)<br>
+注意，一定要先<br>
+实现Python程序运行完后延时关闭</p>
+<!-- more -->
+<p>import time<br>
+#一定要导入模块<br>
+现在我们看一下具体场景<br>
+比如我要Print123，我想让他输出后2秒自动关闭，那代码就是：<br>
+——————————————————————————————</p>
+<h1 id="-codingutf-8-">-<em>- coding:UTF-8 -</em>-</h1>
+<p>import time<br>
+#先导入time模块</p>
+<p>print(&quot;123&quot;)<br>
+#输出123</p>
+<p>time.sleep(2)<br>
+#两秒关闭<br>
+——————————————————————————————<br>
+好了，我的分享就到这里</p>
+<h2 id="喜欢的记得收藏">喜欢的记得收藏</h2>
+<p>作者：mxd0123456，首发于CSDN<br>
+————————————————<br>
+版权声明：本文为CSDN博主「mxd0123456」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>
+原文链接：https://blog.csdn.net/m0_52563006/article/details/122532736</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://mxd0123456.github.io/blog/tag/3HGC346bw/" class="tag">
+                    csdn
+                  </a>
+                
+                  <a href="https://mxd0123456.github.io/blog/tag/4nJJcCxwkv/" class="tag">
+                    code
+                  </a>
+                
+                  <a href="https://mxd0123456.github.io/blog/tag/uL4EaQhw1G/" class="tag">
+                    python
+                  </a>
+                
+                  <a href="https://mxd0123456.github.io/blog/tag/aSBOQoixfO/" class="tag">
+                    windows
+                  </a>
+                
+                  <a href="https://mxd0123456.github.io/blog/tag/AixyVhG-1/" class="tag">
+                    linux
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://mxd0123456.github.io/blog/post/linux-mint-deng-lu-dao-zhuo-mian-shi-hei-ping-xian-shi-yi-ge-dui-hua-kuang-cinnamon-session-cinnamon-not-found/">
+                  <h3 class="post-title">
+                    Linux Mint登录到桌面时黑屏，显示一个对话框“cinnamon-session-cinnamon not-found”
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '217c5792278548167e4d',
+        clientSecret: '8134aa2fff338fdbb0ad42be10a176267c0ddb17',
+        repo: 'gitalk-data',
+        owner: 'mxd0123456',
+        admin: ['mxd0123456'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
